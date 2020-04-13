@@ -196,7 +196,7 @@ func (d *meshWorkloadFinder) createOrUpdateWorkload(discoveredWorkload *discover
 }
 
 func (d *meshWorkloadFinder) createMeshResourceRef(ctx context.Context) (*core_types.ResourceRef, error) {
-	meshList, err := d.localMeshClient.List(ctx, &client.ListOptions{})
+	meshList, err := d.localMeshClient.ListMesh(ctx, &client.ListOptions{})
 	if err != nil {
 		return nil, err
 	}
